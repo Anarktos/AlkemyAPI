@@ -1,0 +1,2046 @@
+{
+	"info": {
+		"_postman_id": "29dd5572-f74e-4b07-a699-e0fe15a0f89c",
+		"name": "DISNEY API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Api Registration",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"camilowhite74@gmail.com\",\r\n    \"password\": \"camilo1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/auth/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"auth",
+						"register"
+					]
+				},
+				"description": "Allows you to register in the API. You need to provide an email and password. If the data is correct, the API will create your user and then sent you an email."
+			},
+			"response": [
+				{
+					"name": "Api Registration",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"camilowhite74@gmail.com\",\r\n    \"password\": \"camilo1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/auth/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "54"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"36-ezYOLDo1pT2Wbfbo/IeQpJG3B28\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 23 Feb 2022 00:08:43 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"created\",\n    \"user\": \"camilowhite74@gmail.com\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Login ",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"camilowhite74@gmail.com\",\r\n    \"password\": \"camilo1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"auth",
+						"login"
+					]
+				},
+				"description": "You need to provide the email and password of the user that you created in the registration point. After that, the api will try to authenticate your user and then returns you a token that you need to use as a bearer token to get access to end points of API. "
+			},
+			"response": [
+				{
+					"name": "Login ",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"camilowhite74@gmail.com\",\r\n    \"password\": \"camilo1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "228"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"e4-cKOHKc2OiDP2ele+vzAwu7hcHio\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 23 Feb 2022 00:16:44 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"successful login\",\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNhbWlsb3doaXRlNzRAZ21haWwuY29tIiwiaWQiOjEsImlhdCI6MTY0NTU3NTQwNCwiZXhwIjoxNjQ1NTc3MjA0fQ.Apk_TCplXqQPkXqHu52TMecU7Ukhif7jQ3yrtK6gRWY\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Characters",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNhbWlsb3doaXRlNzRAZ21haWwuY29tIiwiaWQiOjEsImlhdCI6MTY0NTU4NjU4NywiZXhwIjoxNjQ1NTg4Mzg3fQ.wAf-m98rERKfJ3HMi1RsgF_mrpFiUvfaWC733cw5MKI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/characters",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"characters"
+					]
+				},
+				"description": "Returns you a list of images and names of each character saved in the API"
+			},
+			"response": [
+				{
+					"name": "Get Characters",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/characters",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"characters"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "119"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"77-QEvoR9yuGHP3gjI67Tfmj2JSw1M\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 23 Feb 2022 03:27:57 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"characters\": [\n        {\n            \"image\": \"https://n9.cl/jerya\",\n            \"name\": \"Princess Bella\"\n        },\n        {\n            \"image\": \"https://n9.cl/jerya\",\n            \"name\": \"Beast\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Create a Character",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNhbWlsb3doaXRlNzRAZ21haWwuY29tIiwiaWQiOjEsImlhdCI6MTY0NTYzMTQyMSwiZXhwIjoxNjQ1NjMzMjIxfQ.p1b9HbhgD1B82VxNR3NJ7mETjw0kUTQSriz8lowWyko",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"image\": \"https://n9.cl/uy1oe\",\r\n    \"name\": \"Rapunzel\",\r\n    \"age\": 17,\r\n    \"weight\": 60,\r\n    \"history\": \"A princess of Disney\",\r\n    \"movieId\": 5\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/characters",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"characters"
+					]
+				},
+				"description": "This end point allows you to create a character. You must be provide *all data* to fill each field that character needs to be created. If data is correct, the API will create a new character and then returns it. "
+			},
+			"response": [
+				{
+					"name": "Create a Character",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"image\": \"https://n9.cl/uy1oe\",\r\n    \"name\": \"Rapunzel\",\r\n    \"age\": 17,\r\n    \"weight\": 60,\r\n    \"history\": \"A princess of Disney\",\r\n    \"movieId\": 5\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/characters",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"characters"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "202"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"ca-IkM0LsGw9Qw8usDZ4LE4ZuLqWmI\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 23 Feb 2022 16:13:25 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"character\": {\n        \"id\": 4,\n        \"image\": \"https://n9.cl/uy1oe\",\n        \"name\": \"Rapunzel\",\n        \"age\": 17,\n        \"weight\": 60,\n        \"history\": \"A princess of Disney\",\n        \"updatedAt\": \"2022-02-23T16:13:25.576Z\",\n        \"createdAt\": \"2022-02-23T16:13:25.576Z\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Update Characters",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNhbWlsb3doaXRlNzRAZ21haWwuY29tIiwiaWQiOjEsImlhdCI6MTY0NTYzMzMwNCwiZXhwIjoxNjQ1NjM1MTA0fQ.J1UEUHUMXPWJQwwoP5kdQzIfqscPT0jGM8soPQa5ojA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Bella\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/characters?name=Princess+Bella",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"characters"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Princess+Bella"
+						}
+					]
+				},
+				"description": "Allows you to update any character in the API. You only need to provide the name of the character as a query param and then define the fields that you want to update providing the corresponding data for each one."
+			},
+			"response": [
+				{
+					"name": "Update Characters",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Bella\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/characters?name=Princess+Bella",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"characters"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Princess+Bella"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "160"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"a0-RXQsEm5oyxmBTAtLika32eaBvWM\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 23 Feb 2022 16:42:08 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"character\": {\n        \"id\": 5,\n        \"image\": \"https://n9.cl/c2193\",\n        \"name\": \"Bella\",\n        \"age\": 17,\n        \"weight\": 62,\n        \"history\": \"A princess of Disney\",\n        \"updatedAt\": \"2022-02-23T16:42:08.271Z\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete Characters",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNhbWlsb3doaXRlNzRAZ21haWwuY29tIiwiaWQiOjEsImlhdCI6MTY0NTU4NjU4NywiZXhwIjoxNjQ1NTg4Mzg3fQ.wAf-m98rERKfJ3HMi1RsgF_mrpFiUvfaWC733cw5MKI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/characters?name=Princess+Bella",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"characters"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Princess+Bella"
+						}
+					]
+				},
+				"description": "Allows you to delete any character in the API. You only need to provide the character name as a query param and if the name exist, the API will delet it."
+			},
+			"response": [
+				{
+					"name": "Delete Characters",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/characters?name=Princess+Bella",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"characters"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Princess+Bella"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "21"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"15-p9+dxOLibAYwSbN2QN6jpmYKT9k\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 23 Feb 2022 03:48:15 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"deleted\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Characters Detail",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNhbWlsb3doaXRlNzRAZ21haWwuY29tIiwiaWQiOjEsImlhdCI6MTY0NTYzNTQ5MywiZXhwIjoxNjQ1NjM3MjkzfQ.rKVl2wTuGTtci-x6jnDYKdLx8gHjxiZ2oiYjDKM8NyU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/characters/detail",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"characters",
+						"detail"
+					]
+				},
+				"description": "Returns you a list of each character that includes all data related to each character"
+			},
+			"response": [
+				{
+					"name": "Characters Detail",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/characters/detail",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"characters",
+								"detail"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "468"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1d4-7T1DCy1RQyCIlOozW2T2t5VDszk\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 23 Feb 2022 16:58:30 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"characters\": [\n        {\n            \"id\": 4,\n            \"image\": \"https://n9.cl/uy1oe\",\n            \"name\": \"Rapunzel\",\n            \"age\": 17,\n            \"weight\": 60,\n            \"history\": \"A princess of Disney\",\n            \"movies\": [\n                {\n                    \"title\": \"Tangled\"\n                }\n            ]\n        },\n        {\n            \"id\": 5,\n            \"image\": \"https://n9.cl/c2193\",\n            \"name\": \"Bella\",\n            \"age\": 17,\n            \"weight\": 62,\n            \"history\": \"A princess of Disney\",\n            \"movies\": [\n                {\n                    \"title\": \"The Beauty and The Beast\"\n                }\n            ]\n        },\n        {\n            \"id\": 7,\n            \"image\": \"https://n9.cl/c2193\",\n            \"name\": \"Beast\",\n            \"age\": 20,\n            \"weight\": 80,\n            \"history\": \"A prince of disney\",\n            \"movies\": [\n                {\n                    \"title\": \"The Beauty and The Beast\"\n                }\n            ]\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Find a Character by Name",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNhbWlsb3doaXRlNzRAZ21haWwuY29tIiwiaWQiOjEsImlhdCI6MTY0NTYzMTQyMSwiZXhwIjoxNjQ1NjMzMjIxfQ.p1b9HbhgD1B82VxNR3NJ7mETjw0kUTQSriz8lowWyko",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/characters?name=Beast",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"characters"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Beast"
+						}
+					]
+				},
+				"description": "Allows you to filter the list of characters by names. You only need to provide a name as a query param and if the API find a match, returns the character."
+			},
+			"response": [
+				{
+					"name": "Find a Character by Name",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/characters?name=Beast",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"characters"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Beast"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "119"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"77-77yvdO/1V35Qz491GPrSWHUArFw\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 23 Feb 2022 15:51:44 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"character\": {\n        \"id\": 2,\n        \"image\": \"https://n9.cl/jerya\",\n        \"name\": \"Beast\",\n        \"age\": 20,\n        \"weight\": 80,\n        \"history\": \"A prince of Disney\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Find Characters by Age",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNhbWlsb3doaXRlNzRAZ21haWwuY29tIiwiaWQiOjEsImlhdCI6MTY0NTYzMTQyMSwiZXhwIjoxNjQ1NjMzMjIxfQ.p1b9HbhgD1B82VxNR3NJ7mETjw0kUTQSriz8lowWyko",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/characters?age=17",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"characters"
+					],
+					"query": [
+						{
+							"key": "age",
+							"value": "17"
+						}
+					]
+				},
+				"description": "Allows you to filter all characters by age that you provide as query param.  The API will search and then returns all the characters that matches with that age. "
+			},
+			"response": [
+				{
+					"name": "Find Characters by Age",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/characters?age=17",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"characters"
+							],
+							"query": [
+								{
+									"key": "age",
+									"value": "17"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "244"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"f4-W3sAucKljskvP1q5LQQKl5hiPdI\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 23 Feb 2022 16:16:28 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"characters\": [\n        {\n            \"id\": 3,\n            \"image\": \"https://n9.cl/jerya\",\n            \"name\": \"Princess Bella\",\n            \"age\": 17,\n            \"weight\": 60,\n            \"history\": \"A princess of Disney\"\n        },\n        {\n            \"id\": 4,\n            \"image\": \"https://n9.cl/uy1oe\",\n            \"name\": \"Rapunzel\",\n            \"age\": 17,\n            \"weight\": 60,\n            \"history\": \"A princess of Disney\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Find Characters by Movies",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNhbWlsb3doaXRlNzRAZ21haWwuY29tIiwiaWQiOjEsImlhdCI6MTY0NTYzNTQ5MywiZXhwIjoxNjQ1NjM3MjkzfQ.rKVl2wTuGTtci-x6jnDYKdLx8gHjxiZ2oiYjDKM8NyU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/characters?movies=4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"characters"
+					],
+					"query": [
+						{
+							"key": "movies",
+							"value": "4"
+						}
+					]
+				},
+				"description": "Allows you to find any character included in a movie. You only need to provide the movie id as a query param and the API will search and returns each character thah matches."
+			},
+			"response": [
+				{
+					"name": "Find Characters by Movies",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/characters?movies=4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"characters"
+							],
+							"query": [
+								{
+									"key": "movies",
+									"value": "4"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "326"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"146-hOX0SAE3h0T2OMzZwNb1Gt/aO6E\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 23 Feb 2022 17:01:46 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"characters\": [\n        {\n            \"id\": 5,\n            \"image\": \"https://n9.cl/c2193\",\n            \"name\": \"Bella\",\n            \"age\": 17,\n            \"weight\": 62,\n            \"history\": \"A princess of Disney\",\n            \"movies\": [\n                {\n                    \"title\": \"The Beauty and The Beast\"\n                }\n            ]\n        },\n        {\n            \"id\": 7,\n            \"image\": \"https://n9.cl/c2193\",\n            \"name\": \"Beast\",\n            \"age\": 20,\n            \"weight\": 80,\n            \"history\": \"A prince of disney\",\n            \"movies\": [\n                {\n                    \"title\": \"The Beauty and The Beast\"\n                }\n            ]\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Movies",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNhbWlsb3doaXRlNzRAZ21haWwuY29tIiwiaWQiOjEsImlhdCI6MTY0NTYzNTQ5MywiZXhwIjoxNjQ1NjM3MjkzfQ.rKVl2wTuGTtci-x6jnDYKdLx8gHjxiZ2oiYjDKM8NyU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/movies",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"movies"
+					]
+				},
+				"description": "Returns a list of all movies, including their images, titles and release dates."
+			},
+			"response": [
+				{
+					"name": "Get Movies",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/movies",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"movies"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "225"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"e1-y0KCyNz0KLReaoN3zh9EDUhl0ag\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 23 Feb 2022 17:06:58 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"movies\": [\n        {\n            \"id\": 4,\n            \"image\": \"https://n9.cl/hgjzj\",\n            \"title\": \"The Beauty and The Beast\",\n            \"releaseDate\": \"1991-11-25T05:00:00.000Z\"\n        },\n        {\n            \"id\": 5,\n            \"image\": \"https://n9.cl/uy1oe\",\n            \"title\": \"Tangled\",\n            \"releaseDate\": \"2011-01-07T05:00:00.000Z\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Create Movies",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNhbWlsb3doaXRlNzRAZ21haWwuY29tIiwiaWQiOjEsImlhdCI6MTY0NTYzNTQ5MywiZXhwIjoxNjQ1NjM3MjkzfQ.rKVl2wTuGTtci-x6jnDYKdLx8gHjxiZ2oiYjDKM8NyU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"image\": \"https://n9.cl/xznwk\",\r\n    \"title\": \"Maleficient\",\r\n    \"releaseDate\": \"2014/05/28\",\r\n    \"rating\": 5,\r\n    \"genreId\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/movies",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"movies"
+					]
+				},
+				"description": "Allows you to create a movie. You only need to provide all the data to complete each field. If the data is correct, the API will create a movie and return it after that."
+			},
+			"response": [
+				{
+					"name": "Create Movies",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"image\": \"https://n9.cl/xznwk\",\r\n    \"title\": \"Maleficient\",\r\n    \"releaseDate\": \"2014/05/28\",\r\n    \"rating\": 5,\r\n    \"genreId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/movies",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"movies"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "200"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"c8-FKZZCR/M86oO74wK8BHvHkTnvFA\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 23 Feb 2022 17:16:37 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"movie\": {\n        \"id\": 7,\n        \"image\": \"https://n9.cl/xznwk\",\n        \"title\": \"Maleficient\",\n        \"releaseDate\": \"2014-05-28T05:00:00.000Z\",\n        \"rating\": 5,\n        \"updatedAt\": \"2022-02-23T17:16:37.272Z\",\n        \"createdAt\": \"2022-02-23T17:16:37.272Z\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Update Movies",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNhbWlsb3doaXRlNzRAZ21haWwuY29tIiwiaWQiOjEsImlhdCI6MTY0NTYzNTQ5MywiZXhwIjoxNjQ1NjM3MjkzfQ.rKVl2wTuGTtci-x6jnDYKdLx8gHjxiZ2oiYjDKM8NyU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"rating\": 4\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/movies?name=Maleficient",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"movies"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Maleficient"
+						}
+					]
+				},
+				"description": "Allows you to update any movie in the API. You only need to provide the name of the character as a query param and then define the fields that you want to update providing the corresponding data for each one."
+			},
+			"response": [
+				{
+					"name": "Update Movies",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"rating\": 4\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/movies?name=Maleficient",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"movies"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Maleficient"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "173"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"ad-s78QO6LXBI4/dSHO/s7Q6O0NUnw\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 23 Feb 2022 17:23:25 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"movie\": {\n        \"id\": 7,\n        \"image\": \"https://n9.cl/xznwk\",\n        \"title\": \"Maleficient\",\n        \"releaseDate\": \"2014-05-28T05:00:00.000Z\",\n        \"rating\": 4,\n        \"genreId\": 1,\n        \"updatedAt\": \"2022-02-23T17:23:25.529Z\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete Movies",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNhbWlsb3doaXRlNzRAZ21haWwuY29tIiwiaWQiOjEsImlhdCI6MTY0NTYzNTQ5MywiZXhwIjoxNjQ1NjM3MjkzfQ.rKVl2wTuGTtci-x6jnDYKdLx8gHjxiZ2oiYjDKM8NyU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/movies?name=Maleficient",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"movies"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Maleficient"
+						}
+					]
+				},
+				"description": "Allows you to delete any movie in the API. You only need to provide the movie name as a query param and if the name exist, the API will delet it."
+			},
+			"response": [
+				{
+					"name": "Delete Movies",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/movies?name=Maleficient",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"movies"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Maleficient"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "21"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"15-p9+dxOLibAYwSbN2QN6jpmYKT9k\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 23 Feb 2022 17:26:17 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"deleted\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Find a Movie by Name",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNhbWlsb3doaXRlNzRAZ21haWwuY29tIiwiaWQiOjEsImlhdCI6MTY0NTYzNzg4OSwiZXhwIjoxNjQ1NjM5Njg5fQ.SBiuWNCCnnr1CPBQc-_kXo1C3C2Be5EL3OrIZrMBG3I",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/movies?name=Frozen",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"movies"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Frozen"
+						}
+					]
+				},
+				"description": "Allows you to filter the list of movies by names. You only need to provide a name as a query param and if the API find a match, returns the movie."
+			},
+			"response": [
+				{
+					"name": "Find a Movie by Name",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/movies?name=Frozen",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"movies"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Frozen"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "122"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"7a-5ugdAZ6syi52uKUvkKFqjEzbCCo\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 23 Feb 2022 17:40:23 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"movie\": {\n        \"image\": \"https://n9.cl/4adfa\",\n        \"title\": \"Frozen\",\n        \"releaseDate\": \"2013-11-27T05:00:00.000Z\",\n        \"rating\": 3,\n        \"genreId\": 1\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Find Movies by Genre",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNhbWlsb3doaXRlNzRAZ21haWwuY29tIiwiaWQiOjEsImlhdCI6MTY0NTYzNzg4OSwiZXhwIjoxNjQ1NjM5Njg5fQ.SBiuWNCCnnr1CPBQc-_kXo1C3C2Be5EL3OrIZrMBG3I",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/movies?genre=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"movies"
+					],
+					"query": [
+						{
+							"key": "genre",
+							"value": "1"
+						}
+					]
+				},
+				"description": "It allows you to find any movie related to a genre. You just need to provide a genre ID as a query param and then the API returns any characters related to it."
+			},
+			"response": [
+				{
+					"name": "Find Movies by Genre",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/movies?genre=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"movies"
+							],
+							"query": [
+								{
+									"key": "genre",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "370"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"172-/aYt0AQcXh+ZDlag7EH+a9ugVT4\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 23 Feb 2022 17:44:31 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"movies\": [\n        {\n            \"image\": \"https://n9.cl/hgjzj\",\n            \"title\": \"The Beauty and The Beast\",\n            \"releaseDate\": \"1991-11-25T05:00:00.000Z\",\n            \"rating\": 4,\n            \"genreId\": 1\n        },\n        {\n            \"image\": \"https://n9.cl/uy1oe\",\n            \"title\": \"Tangled\",\n            \"releaseDate\": \"2011-01-07T05:00:00.000Z\",\n            \"rating\": 4,\n            \"genreId\": 1\n        },\n        {\n            \"image\": \"https://n9.cl/4adfa\",\n            \"title\": \"Frozen\",\n            \"releaseDate\": \"2013-11-27T05:00:00.000Z\",\n            \"rating\": 3,\n            \"genreId\": 1\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Filter Movies by Release Date",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNhbWlsb3doaXRlNzRAZ21haWwuY29tIiwiaWQiOjEsImlhdCI6MTY0NTYzNzg4OSwiZXhwIjoxNjQ1NjM5Njg5fQ.SBiuWNCCnnr1CPBQc-_kXo1C3C2Be5EL3OrIZrMBG3I",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/movies?order=ASC",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"movies"
+					],
+					"query": [
+						{
+							"key": "order",
+							"value": "ASC"
+						}
+					]
+				},
+				"description": "Allows you to filter by release date in order ascendent or decendent. You just need to provide the order as a query param and then the API returns a list of all movies. "
+			},
+			"response": [
+				{
+					"name": "Filter Movies by Release Date",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/movies?order=ASC",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"movies"
+							],
+							"query": [
+								{
+									"key": "order",
+									"value": "ASC"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "370"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"172-/aYt0AQcXh+ZDlag7EH+a9ugVT4\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 23 Feb 2022 17:50:35 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"movies\": [\n        {\n            \"image\": \"https://n9.cl/hgjzj\",\n            \"title\": \"The Beauty and The Beast\",\n            \"releaseDate\": \"1991-11-25T05:00:00.000Z\",\n            \"rating\": 4,\n            \"genreId\": 1\n        },\n        {\n            \"image\": \"https://n9.cl/uy1oe\",\n            \"title\": \"Tangled\",\n            \"releaseDate\": \"2011-01-07T05:00:00.000Z\",\n            \"rating\": 4,\n            \"genreId\": 1\n        },\n        {\n            \"image\": \"https://n9.cl/4adfa\",\n            \"title\": \"Frozen\",\n            \"releaseDate\": \"2013-11-27T05:00:00.000Z\",\n            \"rating\": 3,\n            \"genreId\": 1\n        }\n    ]\n}"
+				},
+				{
+					"name": "Filter Movies by Release Date",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/movies?order=DESC",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"movies"
+							],
+							"query": [
+								{
+									"key": "order",
+									"value": "DESC"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "370"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"172-qs/rs2it2LpeUTrcPzpQoX1kwJ8\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 23 Feb 2022 17:55:08 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"movies\": [\n        {\n            \"image\": \"https://n9.cl/4adfa\",\n            \"title\": \"Frozen\",\n            \"releaseDate\": \"2013-11-27T05:00:00.000Z\",\n            \"rating\": 3,\n            \"genreId\": 1\n        },\n        {\n            \"image\": \"https://n9.cl/uy1oe\",\n            \"title\": \"Tangled\",\n            \"releaseDate\": \"2011-01-07T05:00:00.000Z\",\n            \"rating\": 4,\n            \"genreId\": 1\n        },\n        {\n            \"image\": \"https://n9.cl/hgjzj\",\n            \"title\": \"The Beauty and The Beast\",\n            \"releaseDate\": \"1991-11-25T05:00:00.000Z\",\n            \"rating\": 4,\n            \"genreId\": 1\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Genres",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNhbWlsb3doaXRlNzRAZ21haWwuY29tIiwiaWQiOjEsImlhdCI6MTY0NTYzNzg4OSwiZXhwIjoxNjQ1NjM5Njg5fQ.SBiuWNCCnnr1CPBQc-_kXo1C3C2Be5EL3OrIZrMBG3I",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/genres",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"genres"
+					]
+				},
+				"description": "Return a list of all genres "
+			},
+			"response": [
+				{
+					"name": "Get Genres",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/genres",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"genres"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "61"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"3d-MBY1cxIvCUdHeDd7WwkgZXJb8F4\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 23 Feb 2022 17:58:23 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"genres\": [\n        {\n            \"image\": \"https://n9.cl/m5v2r\",\n            \"name\": \"Fantasy\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Create Genre",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNhbWlsb3doaXRlNzRAZ21haWwuY29tIiwiaWQiOjEsImlhdCI6MTY0NTYzNzg4OSwiZXhwIjoxNjQ1NjM5Njg5fQ.SBiuWNCCnnr1CPBQc-_kXo1C3C2Be5EL3OrIZrMBG3I",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"image\": \"https://n9.cl/lp8ec\",\r\n    \"name\": \"Drama\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/genres",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"genres"
+					]
+				},
+				"description": "Allows you to create a genre."
+			},
+			"response": [
+				{
+					"name": "Create Genre",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"image\": \"https://n9.cl/lp8ec\",\r\n    \"name\": \"Drama\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/genres",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"genres"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "141"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"8d-4+GCNASA2oLts9r4sYliW/7dDDI\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 23 Feb 2022 18:00:59 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"genre\": {\n        \"id\": 3,\n        \"image\": \"https://n9.cl/lp8ec\",\n        \"name\": \"Drama\",\n        \"updatedAt\": \"2022-02-23T18:00:58.994Z\",\n        \"createdAt\": \"2022-02-23T18:00:58.994Z\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Update Genres",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNhbWlsb3doaXRlNzRAZ21haWwuY29tIiwiaWQiOjEsImlhdCI6MTY0NTYzNzg4OSwiZXhwIjoxNjQ1NjM5Njg5fQ.SBiuWNCCnnr1CPBQc-_kXo1C3C2Be5EL3OrIZrMBG3I",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Action\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/genres?name=Drama",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"genres"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Drama"
+						}
+					]
+				},
+				"description": "Allows you to update any genre. You just need to provide a name as a query param."
+			},
+			"response": [
+				{
+					"name": "Update Genres",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Action\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/genres?name=Drama",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"genres"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Drama"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "142"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"8e-QMUJK2EPD9j7obfP3s4t0URLrcc\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 23 Feb 2022 18:06:19 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"genre\": {\n        \"id\": 2,\n        \"name\": \"Action\",\n        \"image\": \"https://n9.cl/lp8ec\",\n        \"createdAt\": \"2022-02-23T18:00:53.000Z\",\n        \"updatedAt\": \"2022-02-23T18:06:19.542Z\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete Genres",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNhbWlsb3doaXRlNzRAZ21haWwuY29tIiwiaWQiOjEsImlhdCI6MTY0NTYzOTcwMywiZXhwIjoxNjQ1NjQxNTAzfQ.8Q_Ip8qg4jJJL6A4EQLJkGbT7oiJF3XeTqX2VvwwH88",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/genres?name=Action",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"genres"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Action"
+						}
+					]
+				},
+				"description": "Allows you to delete any genre. You just need to provide a name as a query param. "
+			},
+			"response": []
+		}
+	]
+}

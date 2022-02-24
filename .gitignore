@@ -1,0 +1,9 @@
+#Module
+/node_modules
+
+
+#Dev utilities
+/addData
+
+.env
+
